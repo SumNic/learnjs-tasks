@@ -1,7 +1,7 @@
 function groupById(arr) {
 
     const obj = {};
-    let result = arr.map(function(accumulator, item, index, array) {
+    let result = arr.reduce(function(accumulator, item, index, array) {
         obj[item.id] = array[index];
         return obj;
       }, '');
