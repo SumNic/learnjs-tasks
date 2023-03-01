@@ -13,7 +13,7 @@ let room = {
   meetup.self = meetup;
   
   console.log( JSON.stringify(meetup, function replacer(key, value) {    
-    return (key != "" && value == meetup) ? undefined : value;
+    return (key !== "" && value == meetup) ? undefined : value;
   }));
   
   /* в результате должно быть:

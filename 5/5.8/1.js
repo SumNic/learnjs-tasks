@@ -1,9 +1,17 @@
 let messages = [
     {text: "Hello", from: "John"},
     {text: "How goes?", from: "John"},
-    {text: "See you soon", from: "Alice"}dsf
+    {text: "See you soon", from: "Alice"}
 ];
 
-let readSet = new WeakSet(messages);
+let readSet = new WeakSet();
 
-console.log(readSet);
+let mes = messages[0];
+
+readSet.add(mes);
+
+function readMess (elem) {
+    if (readSet.has(elem)) return 'Сообщение прочитано';
+}
+
+console.log( readMess(mes) );
